@@ -1,0 +1,14 @@
+C:\Users\DELL\source\repos\the_project\the_project\bin\Debug\the_project.exe.config
+C:\Users\DELL\source\repos\the_project\the_project\bin\Debug\the_project.exe
+C:\Users\DELL\source\repos\the_project\the_project\bin\Debug\the_project.pdb
+C:\Users\DELL\source\repos\the_project\the_project\obj\Debug\the_project.csproj.AssemblyReference.cache
+C:\Users\DELL\source\repos\the_project\the_project\obj\Debug\the_project.Form1.resources
+C:\Users\DELL\source\repos\the_project\the_project\obj\Debug\the_project.Properties.Resources.resources
+C:\Users\DELL\source\repos\the_project\the_project\obj\Debug\the_project.csproj.GenerateResource.cache
+C:\Users\DELL\source\repos\the_project\the_project\obj\Debug\the_project.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\the_project\the_project\obj\Debug\the_project.exe
+C:\Users\DELL\source\repos\the_project\the_project\obj\Debug\the_project.pdb
+C:\Users\DELL\source\repos\the_project\the_project\obj\Debug\the_project.yonetici.resources
+C:\Users\DELL\source\repos\the_project\the_project\obj\Debug\the_project.ogrenciform.resources
+C:\Users\DELL\source\repos\the_project\the_project\obj\Debug\the_project.personel_kutuphane.resources
+C:\Users\DELL\source\repos\the_project\the_project\obj\Debug\the_project.personel_reyon.resources
