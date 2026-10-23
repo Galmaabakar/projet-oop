@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kutuphane.Shared", "Kutuphane.Shared\Kutuphane.Shared.csproj", "{88BB6406-9467-4510-8860-28F1A977FFE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kutuphane.Api", "Kutuphane.Api\Kutuphane.Api.csproj", "{68F4C555-15FB-4A98-B560-5A1B9CF7D4BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kutuphane.Web", "Kutuphane.Web\Kutuphane.Web.csproj", "{5CE2061A-36DC-4E9C-8D13-497AE496B86B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88BB6406-9467-4510-8860-28F1A977FFE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88BB6406-9467-4510-8860-28F1A977FFE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88BB6406-9467-4510-8860-28F1A977FFE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88BB6406-9467-4510-8860-28F1A977FFE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68F4C555-15FB-4A98-B560-5A1B9CF7D4BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68F4C555-15FB-4A98-B560-5A1B9CF7D4BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68F4C555-15FB-4A98-B560-5A1B9CF7D4BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68F4C555-15FB-4A98-B560-5A1B9CF7D4BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CE2061A-36DC-4E9C-8D13-497AE496B86B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CE2061A-36DC-4E9C-8D13-497AE496B86B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CE2061A-36DC-4E9C-8D13-497AE496B86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CE2061A-36DC-4E9C-8D13-497AE496B86B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
