@@ -1,7 +1,16 @@
+using Kutuphane.Web.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Typed HttpClient that calls the REST API (base URL from configuration).
+builder.Services.AddHttpClient<LibraryApiClient>(client =>
+{
+    var baseUrl = builder.Configuration["ApiBaseUrl"] ?? "http://localhost:5080/";
+    client.BaseAddress = new Uri(baseUrl);
+});
 
 var app = builder.Build();
 

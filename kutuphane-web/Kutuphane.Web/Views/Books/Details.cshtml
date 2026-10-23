@@ -1,0 +1,32 @@
+@model BookDto
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<h1 class="h3 mb-3">@Model.Title</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row mb-0">
+            <dt class="col-sm-3">Yazar</dt>
+            <dd class="col-sm-9">@Model.Author</dd>
+
+            <dt class="col-sm-3">Kategori</dt>
+            <dd class="col-sm-9">@Model.CategoryName</dd>
+
+            <dt class="col-sm-3">ISBN</dt>
+            <dd class="col-sm-9">@(string.IsNullOrEmpty(Model.Isbn) ? "-" : Model.Isbn)</dd>
+
+            <dt class="col-sm-3">Yayın Yılı</dt>
+            <dd class="col-sm-9">@Model.PublishedYear</dd>
+
+            <dt class="col-sm-3">Mevcut / Toplam</dt>
+            <dd class="col-sm-9">@Model.AvailableCopies / @Model.TotalCopies</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-primary">Düzenle</a>
+    <a asp-action="Index" class="btn btn-outline-secondary">Listeye dön</a>
+</div>

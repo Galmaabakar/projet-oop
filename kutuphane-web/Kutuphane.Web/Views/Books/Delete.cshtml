@@ -1,0 +1,28 @@
+@model BookDto
+@{
+    ViewData["Title"] = "Kitabı Sil";
+}
+
+<h1 class="h3 mb-3">Kitabı Sil</h1>
+
+<div class="alert alert-danger">
+    Bu kitabı silmek istediğinize emin misiniz?
+</div>
+
+<div class="card mb-3">
+    <div class="card-body">
+        <dl class="row mb-0">
+            <dt class="col-sm-3">Başlık</dt>
+            <dd class="col-sm-9">@Model.Title</dd>
+            <dt class="col-sm-3">Yazar</dt>
+            <dd class="col-sm-9">@Model.Author</dd>
+            <dt class="col-sm-3">Kategori</dt>
+            <dd class="col-sm-9">@Model.CategoryName</dd>
+        </dl>
+    </div>
+</div>
+
+<form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+    <button type="submit" class="btn btn-danger">Evet, sil</button>
+    <a asp-action="Index" class="btn btn-outline-secondary">İptal</a>
+</form>

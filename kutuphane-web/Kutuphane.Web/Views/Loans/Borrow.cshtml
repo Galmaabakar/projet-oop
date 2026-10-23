@@ -1,0 +1,41 @@
+@model LoanInputDto
+@{
+    ViewData["Title"] = "Kitap Ödünç Ver";
+}
+
+<h1 class="h3 mb-3">Kitap Ödünç Ver</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Borrow" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="BookId" class="form-label">Kitap</label>
+                <select asp-for="BookId" class="form-select" asp-items="ViewBag.Books">
+                    <option value="">-- Kitap seçin --</option>
+                </select>
+                <span asp-validation-for="BookId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="MemberId" class="form-label">Üye</label>
+                <select asp-for="MemberId" class="form-select" asp-items="ViewBag.Members">
+                    <option value="">-- Üye seçin --</option>
+                </select>
+                <span asp-validation-for="MemberId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LoanDays" class="form-label">Gün Sayısı</label>
+                <input asp-for="LoanDays" class="form-control" style="max-width: 120px;" />
+                <span asp-validation-for="LoanDays" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Ödünç Ver</button>
+            <a asp-action="Index" class="btn btn-outline-secondary">İptal</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

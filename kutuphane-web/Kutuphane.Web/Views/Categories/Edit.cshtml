@@ -1,0 +1,26 @@
+@model CategoryInputDto
+@{
+    ViewData["Title"] = "Kategoriyi Düzenle";
+    var categoryId = (int)ViewBag.CategoryId;
+}
+
+<h1 class="h3 mb-3">Kategoriyi Düzenle</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Edit" asp-route-id="@categoryId" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Ad</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Güncelle</button>
+            <a asp-action="Index" class="btn btn-outline-secondary">İptal</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

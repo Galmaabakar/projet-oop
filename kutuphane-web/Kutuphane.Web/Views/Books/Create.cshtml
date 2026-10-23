@@ -1,0 +1,56 @@
+@model BookInputDto
+@{
+    ViewData["Title"] = "Yeni Kitap";
+}
+
+<h1 class="h3 mb-3">Yeni Kitap</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label">Başlık</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Author" class="form-label">Yazar</label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Isbn" class="form-label">ISBN</label>
+                    <input asp-for="Isbn" class="form-control" />
+                    <span asp-validation-for="Isbn" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label asp-for="PublishedYear" class="form-label">Yayın Yılı</label>
+                    <input asp-for="PublishedYear" class="form-control" />
+                    <span asp-validation-for="PublishedYear" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label asp-for="TotalCopies" class="form-label">Kopya Sayısı</label>
+                    <input asp-for="TotalCopies" class="form-control" />
+                    <span asp-validation-for="TotalCopies" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CategoryId" class="form-label">Kategori</label>
+                <select asp-for="CategoryId" class="form-select" asp-items="ViewBag.Categories">
+                    <option value="">-- Kategori seçin --</option>
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+            <a asp-action="Index" class="btn btn-outline-secondary">İptal</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
