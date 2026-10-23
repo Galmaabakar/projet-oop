@@ -1,6 +1,14 @@
+using Kutuphane.Api.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+// Register the EF Core DbContext using the PostgreSQL (Npgsql) provider.
+// The connection string lives in appsettings.json under "DefaultConnection".
+builder.Services.AddDbContext<KutuphaneContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
