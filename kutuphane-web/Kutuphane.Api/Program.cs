@@ -32,6 +32,15 @@ builder.Services.AddSwaggerGen(options =>
 
 var app = builder.Build();
 
+// Create the database (if it does not exist yet) and apply any pending
+// migrations on startup, so the project is ready to run right after opening
+// it — no manual "Update-Database" step needed for a first launch.
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<KutuphaneContext>();
+    db.Database.Migrate();
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
