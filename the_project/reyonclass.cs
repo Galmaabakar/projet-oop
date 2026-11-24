@@ -21,10 +21,8 @@ namespace the_project
 
             }
         }
-        string galma = "hosgeldiniz";
         public reyonclass(string no, string sifre, string kim) : base(no, sifre, kim)
         {
-            no = no;
             if (sifre == "123456" && kim == "personel_reyon")
             {
 

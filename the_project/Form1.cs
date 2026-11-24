@@ -24,55 +24,53 @@ namespace the_project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem == "ogrenci")
+            // SelectedItem est un object : on le convertit en string pour comparer les valeurs
+            // (et non les references), et on gere le cas ou rien n'est selectionne.
+            string kim = comboBox1.SelectedItem as string;
+            if (string.IsNullOrEmpty(kim))
             {
-                ogrenci ogrenci = new ogrenci(textBox3.Text, textBox4.Text, comboBox1.SelectedItem.ToString());
-                string gal = ogrenci.ToString(textBox3.Text, comboBox1.SelectedItem.ToString(), textBox1.Text, textBox2.Text);
-                string he = ogrenci.girisoldu;
-                listt.list.Add(textBox1.Text);
-                listt.list.Add(textBox3.Text);
-                listt.list.Add(comboBox1.SelectedItem);
-                var bildi = gal;
-                label5.Text = he;
-                if (he == "giris basari ile tamamlandi")
-                {
-                    MessageBox.Show(gal);
-                    ogrencif.ShowDialog();
-                }
-            }
-            else if(comboBox1.SelectedItem == "personel_kutuphane")
-            {
-                personel_kutuphaneclass kutuphane = new personel_kutuphaneclass(textBox3.Text, textBox4.Text, comboBox1.SelectedItem.ToString());
-                string gal = kutuphane.ToString(textBox3.Text, comboBox1.SelectedItem.ToString(), textBox1.Text, textBox2.Text);
-                string he = kutuphane.girisoldu;
-                listt.list.Add(textBox1.Text);
-                listt.list.Add(textBox3.Text);
-                listt.list.Add(comboBox1.SelectedItem);
-                var bildi = gal;
-                label5.Text = he;
-                if (he == "giris basari ile tamamlandi")
-                {
-                    MessageBox.Show(gal);
-                    pkutuphane.ShowDialog();
-                }
-            }
-            else if (comboBox1.SelectedItem == "personel_reyon")
-            {
-                reyonclass reyon = new reyonclass(textBox3.Text, textBox4.Text, comboBox1.SelectedItem.ToString());
-                string gal = reyon.ToString(textBox3.Text, comboBox1.SelectedItem.ToString(), textBox1.Text, textBox2.Text);
-                string he = reyon.girisoldu;
-                listt.list.Add(textBox1.Text);
-                listt.list.Add(textBox3.Text);
-                listt.list.Add(comboBox1.SelectedItem);
-                var bildi = gal;
-                label5.Text = he;
-                if (he == "giris basari ile tamamlandi")
-                {
-                    MessageBox.Show(gal);
-                    preyon.ShowDialog();
-                }
+                MessageBox.Show("Lutfen bir giris tipi seciniz");
+                return;
             }
 
+            gecis kullanici;
+            Form acilacakForm;
+            if (kim == "ogrenci")
+            {
+                kullanici = new ogrenci(textBox3.Text, textBox4.Text, kim);
+                acilacakForm = ogrencif;
+            }
+            else if (kim == "personel_kutuphane")
+            {
+                kullanici = new personel_kutuphaneclass(textBox3.Text, textBox4.Text, kim);
+                acilacakForm = pkutuphane;
+            }
+            else if (kim == "personel_reyon")
+            {
+                kullanici = new reyonclass(textBox3.Text, textBox4.Text, kim);
+                acilacakForm = preyon;
+            }
+            else
+            {
+                // "personel_alet" est dans la liste mais n'a aucun formulaire
+                MessageBox.Show($"{kim} icin henuz bir ekran yok");
+                return;
+            }
+
+            giris kisi = (giris)kullanici;
+            kisi.ad = textBox1.Text;
+            kisi.soyad = textBox2.Text;
+
+            label5.Text = kullanici.girisoldu;
+            if (kullanici.girisoldu == "giris basari ile tamamlandi")
+            {
+                // on n'enregistre que les connexions reussies
+                listt.list.Add(textBox1.Text);
+                listt.list.Add(textBox3.Text);
+                listt.list.Add(kim);
+                MessageBox.Show($"{textBox3.Text} nolu, Tip: {kim}, {textBox1.Text} adli,{textBox2.Text} Soyadli giris yapti");
+                acilacakForm.ShowDialog();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

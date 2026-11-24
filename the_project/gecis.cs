@@ -16,7 +16,7 @@ namespace the_project
         {
             this.no = no;
             this.sifre = sifre;
-
+            this.kim = kim;
         }
 
     }

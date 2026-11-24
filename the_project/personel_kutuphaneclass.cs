@@ -21,10 +21,8 @@ namespace the_project
 
             }
         }
-        string galma = "hosgeldiniz";
         public personel_kutuphaneclass(string no, string sifre, string kim) : base(no, sifre, kim)
         {
-            no = no;
             if (sifre == "1234567" && kim == "personel_kutuphane")
             {
 

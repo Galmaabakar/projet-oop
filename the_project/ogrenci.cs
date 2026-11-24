@@ -20,10 +20,8 @@ namespace the_project
                 
             } 
         } 
-        string galma = "hosgeldiniz";
         public ogrenci (string no, string sifre,string kim) : base(no, sifre,kim) 
         {
-            no = no;
             if (sifre =="12345678" && kim == "ogrenci")
             {
 
