@@ -27,7 +27,8 @@ namespace the_project
             new Hesap("1002", "87654321", ogrenci.TIP),
             new Hesap("2001", "1234567", personel_kutuphaneclass.TIP),
             new Hesap("3001", "123456", reyonclass.TIP),
-            new Hesap("4001", "12345", personel_aletclass.TIP)
+            new Hesap("4001", "12345", personel_aletclass.TIP),
+            new Hesap("9001", "admin123", yoneticiclass.TIP)
         };
 
         // Un numero doit etre non vide et ne contenir que des chiffres.

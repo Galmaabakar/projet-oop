@@ -22,9 +22,11 @@ Le nom et le prénom sont libres, mais obligatoires.
 | `personel_kutuphane` | 2001   | 1234567      |
 | `personel_reyon`     | 3001   | 123456       |
 | `personel_alet`      | 4001   | 12345        |
+| `yonetici`           | 9001   | admin123     |
 
 Les comptes sont définis dans `the_project/KullaniciDeposu.cs`.
-L'écran administrateur s'ouvre avec le bouton **Yoneticiyim**.
+Pour l'écran administrateur, choisir le type `yonetici` (ou cliquer sur
+**Yoneticiyim**, qui le sélectionne), puis se connecter comme les autres.
 
 ## Fonctionnalités
 
@@ -47,7 +49,8 @@ giris (interface : ad, soyad)
        ├─ ogrenci                  → ogrenciform
        ├─ personel_kutuphaneclass  → personel_kutuphane
        ├─ reyonclass               → personel_reyon
-       └─ personel_aletclass       → personel_alet
+       ├─ personel_aletclass       → personel_alet
+       └─ yoneticiclass            → yonetici
 ```
 
 - **Héritage** : tout ce qui est commun (numéro, nom, connexion) est dans

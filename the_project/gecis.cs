@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace the_project
 {
-    // Classe de base de tous les utilisateurs (ogrenci et les personels).
+    // Classe de base de tous les utilisateurs (ogrenci, personels et yonetici).
     // Tout ce qui est commun (numero, nom, connexion) est ici ;
     // chaque sous-classe ne definit que son type (kim) et son ecran.
     public abstract class gecis : giris
@@ -49,7 +49,8 @@ namespace the_project
             ogrenci.TIP,
             personel_kutuphaneclass.TIP,
             personel_aletclass.TIP,
-            reyonclass.TIP
+            reyonclass.TIP,
+            yoneticiclass.TIP
         };
 
         // Fabrique : cree le bon objet a partir du type choisi.
@@ -61,6 +62,7 @@ namespace the_project
                 case personel_kutuphaneclass.TIP: return new personel_kutuphaneclass(no, ad, soyad);
                 case personel_aletclass.TIP: return new personel_aletclass(no, ad, soyad);
                 case reyonclass.TIP: return new reyonclass(no, ad, soyad);
+                case yoneticiclass.TIP: return new yoneticiclass(no, ad, soyad);
                 default: throw new ArgumentException("bilinmeyen kullanici tipi: " + kim);
             }
         }

@@ -57,6 +57,13 @@
       <FileName>personel_aletclass.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="the_project.yoneticiclass">
+    <Position X="9.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>yoneticiclass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="the_project.Ders">
     <Position X="0.5" Y="7.5" Width="1.75" />
     <TypeIdentifier>

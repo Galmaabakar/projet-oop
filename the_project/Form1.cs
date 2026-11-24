@@ -55,12 +55,12 @@ namespace the_project
             }
         }
 
+        // Le yonetici doit maintenant se connecter avec son numero et son mot de passe.
         private void button2_Click(object sender, EventArgs e)
         {
-            using (yonetici yoneticiEkrani = new yonetici())
-            {
-                yoneticiEkrani.ShowDialog(this);
-            }
+            comboBox1.SelectedItem = yoneticiclass.TIP;
+            label5.Text = "Yonetici numarasi ve sifresini giriniz";
+            textBox3.Focus();
         }
     }
 }
