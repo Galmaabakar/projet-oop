@@ -44,15 +44,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "dusunceler - blaise pascal",
-            "savas sanati - sun tzu",
-            "emile yada Egitim uzerine - jea jacques rousseau",
-            "bilimssel zihniyet - gaston bachelard",
-            "kapital - karl marx",
-            "saf aklin elestirisi - Emmanuel kant",
-            "Devlet(politeia) - Platon",
-            "Ikinci cins - simone de beauvoir"});
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Location = new System.Drawing.Point(67, 56);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(209, 24);
@@ -65,7 +57,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 40);
             this.button1.TabIndex = 18;
-            this.button1.Text = "GIRIS";
+            this.button1.Text = "Kitabi al";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -106,11 +98,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "nasil dost edinilir - dale carnegie",
-            "zengin baba fakir baba ",
-            "sonsuz guc - anthony robbin",
-            "Pozitif dusunmek - james allen"});
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Location = new System.Drawing.Point(67, 148);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(209, 24);

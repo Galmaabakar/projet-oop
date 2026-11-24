@@ -1,58 +1,83 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace the_project
 {
     public partial class personel_reyon : Form
     {
-        public personel_reyon()
+        private readonly reyonclass personel;
+        private readonly Sepet sepet = new Sepet();
+
+        public personel_reyon(reyonclass personel)
         {
             InitializeComponent();
+            this.personel = personel;
+
+            comboBox1.Items.AddRange(Veriler.Urunler.Where(u => u.Stokta).ToArray<object>());
+            comboBox2.Items.AddRange(Veriler.Urunler.Where(u => !u.Stokta).ToArray<object>());
+            BasligiGuncelle();
+        }
+
+        private void BasligiGuncelle()
+        {
+            Text = $"Reyon - {personel.ad} {personel.soyad} | sepet: {sepet.Kalemler.Count} urun, {sepet.Toplam} TL";
+        }
+
+        // Choisir un produit dans la liste remplit son nom et son numero.
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Urun urun = comboBox1.SelectedItem as Urun;
+            if (urun == null) return;
+            textBox1.Text = urun.Ad;
+            textBox2.Text = urun.Numara;
+            textBox3.Focus();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string urun = textBox1.Text.Trim() + " - " + textBox2.Text.Trim();
-            if (comboBox1.Items.Contains(urun))
+            Urun urun = Veriler.UrunBul(textBox1.Text, textBox2.Text);
+            if (urun == null)
             {
-                // int.Parse plantait si le prix etait vide ou non numerique
-                int fiat;
-                if (!int.TryParse(textBox3.Text, out fiat) || fiat < 0)
-                {
-                    MessageBox.Show("gecerli bir fiat giriniz");
-                    return;
-                }
-                listt.fiat.Add(fiat);
-                listt.alinanurun.Add(urun);
-                MessageBox.Show("urununuz alindi");
+                MessageBox.Show("istediginiz urun bizde yoktur");
+                return;
             }
-            else if (comboBox2.Items.Contains(urun))
+            if (!urun.Stokta)
             {
                 MessageBox.Show("urunuz stokta yoktur ,bir hafta icinde gelecek");
+                return;
             }
-            else { MessageBox.Show("istediginiz urun bizde yoktur"); }
+            int fiat;
+            if (!int.TryParse(textBox3.Text, out fiat) || fiat < 0)
+            {
+                MessageBox.Show("gecerli bir fiat giriniz");
+                return;
+            }
+
+            sepet.Ekle(urun, fiat);
+            textBox3.Clear();
+            BasligiGuncelle();
+            MessageBox.Show("urununuz alindi");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (listt.fiat.Count == 0)
+            Satis satis = personel.SatisYap(sepet);
+            if (satis == null)
             {
                 MessageBox.Show("henuz urun alinmadi");
                 return;
             }
-            int toplam = listt.fiat.Sum();
-            MessageBox.Show(toplam.ToString());
-            listt.toplamfiat.Add(toplam);
-            // on remet a zero pour le client suivant, sinon chaque clic
-            // re-additionnait les memes produits dans toplamfiat
-            listt.fiat.Clear();
+            BasligiGuncelle();
+            MessageBox.Show($"{satis.Kalemler.Count} urun, toplam: {satis.Toplam} TL", "Toplam fiat");
+        }
+
+        private void personel_reyon_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (sepet.Bos) return;
+            DialogResult cevap = MessageBox.Show("Sepette odenmemis urunler var. Yine de cikilsin mi?",
+                "Reyon", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (cevap == DialogResult.No) e.Cancel = true;
         }
     }
 }

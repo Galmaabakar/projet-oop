@@ -1,87 +1,94 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace the_project
 {
     public partial class ogrenciform : Form
     {
-        private const int KREDI_LIMITI = 39;
+        private readonly ogrenci ogrenci;
 
-        public ogrenciform()
+        public ogrenciform(ogrenci ogrenci)
         {
             InitializeComponent();
-            
+            this.ogrenci = ogrenci;
+
+            // les infos de l'etudiant viennent de la connexion
+            textBox8.Text = ogrenci.ad;
+            textBox7.Text = ogrenci.soyad;
+            textBox6.Text = ogrenci.no;
+
+            // le catalogue est partage : un cours ajoute ici apparait pour tous
+            comboBox1.DataSource = Veriler.Dersler;
+            BasligiGuncelle();
+        }
+
+        // Le credit est celui du cours choisi (plus besoin de le taper).
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Ders ders = comboBox1.SelectedItem as Ders;
+            textBox5.Text = ders == null ? "" : ders.Kredi.ToString();
+        }
+
+        private void BasligiGuncelle()
+        {
+            Text = $"Ders secimi - {ogrenci.ad} {ogrenci.soyad} ({ogrenci.ToplamKredi}/{ogrenci.KREDI_LIMITI} kredi)";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //ogrenci ders listesine ders eklemesi icin
-            string yeniDers = textBox1.Text.Trim();
-            if (yeniDers == "")
+            string ad = textBox1.Text.Trim();
+            string no = textBox3.Text.Trim();
+            int kredi;
+            if (ad == "")
             {
                 MessageBox.Show("ders adi bos olamaz");
                 return;
             }
-            if (comboBox1.Items.Contains(yeniDers))
+            if (!int.TryParse(textBox4.Text, out kredi) || kredi <= 0)
+            {
+                MessageBox.Show("gecerli bir kredi giriniz");
+                return;
+            }
+            if (Veriler.Dersler.Any(d => string.Equals(d.Ad, ad, StringComparison.CurrentCultureIgnoreCase)
+                                      || (no != "" && d.No == no)))
             {
                 MessageBox.Show("bu ders zaten listede");
                 return;
             }
-            comboBox1.Items.Add(yeniDers);
+
+            Ders ders = new Ders(ad, no, kredi);
+            Veriler.Dersler.Add(ders);
+            comboBox1.SelectedItem = ders;
+            textBox1.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
             MessageBox.Show("ders basari ile eklendi");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             //ogrenci ders secimi icin
-            // SelectedItem vaut null quand rien n'est choisi (jamais " ")
-            if (comboBox1.SelectedItem == null)
-            {
-                MessageBox.Show("bir ders secmeniz lazim");
-                return;
-            }
-            // int.Parse plantait si la case kredi etait vide ou non numerique
-            int kredi;
-            if (!int.TryParse(textBox5.Text, out kredi) || kredi <= 0)
-            {
-                MessageBox.Show("gecerli bir kredi giriniz");
-                return;
-            }
-            // on verifie la limite AVANT d'ajouter le cours
-            int toplam = listt.kredi.Sum();
-            if (toplam + kredi > KREDI_LIMITI)
-            {
-                MessageBox.Show($"bu ders ile {toplam + kredi} kredi olur, limitiniz {KREDI_LIMITI}");
-                return;
-            }
-
-            listt.ders.Add(textBox7.Text);
-            listt.ders.Add(textBox8.Text);
-            // SelectedText = texte surligne dans la zone d'edition (souvent vide) -> SelectedItem
-            listt.ders.Add(comboBox1.SelectedItem.ToString());
-            listt.kredi.Add(kredi);
-            MessageBox.Show("dersiniz basari ile alindi");
-
+            string mesaj;
+            ogrenci.DersAl(comboBox1.SelectedItem as Ders, out mesaj);
+            MessageBox.Show(mesaj);
+            BasligiGuncelle();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //ogrenciinin fazla ders secmemesi icin
-            int ga = listt.kredi.Sum();
-            if (ga > KREDI_LIMITI)
+            // recapitulatif des cours choisis, puis fermeture
+            var dersler = ogrenci.AldigiDersler.ToList();
+            if (dersler.Count == 0)
             {
-                MessageBox.Show($"{ga} kadar kredili ders alamazsiniz limitiniz {KREDI_LIMITI}");
-                listt.ders.Clear();
-                listt.kredi.Clear();
+                MessageBox.Show("henuz ders secmediniz");
+                return;
             }
-            else { MessageBox.Show($"basari ile kaydedildi, toplam kredi: {ga}"); }
+            string liste = string.Join(Environment.NewLine, dersler.Select(k => $"- {k.Ders.Ad} ({k.Ders.Kredi} kredi)"));
+            MessageBox.Show($"Sectiginiz dersler:{Environment.NewLine}{liste}{Environment.NewLine}{Environment.NewLine}Toplam: {ogrenci.ToplamKredi}/{ogrenci.KREDI_LIMITI} kredi",
+                "basari ile kaydedildi");
+            Close();
         }
     }
 }

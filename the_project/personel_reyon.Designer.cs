@@ -76,11 +76,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "nasil dost edinilir - dale carnegie",
-            "zengin baba fakir baba ",
-            "sonsuz guc - anthony robbin",
-            "Pozitif dusunmek - james allen"});
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Location = new System.Drawing.Point(44, 171);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(209, 24);
@@ -89,70 +85,12 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Macun - 37481",
-            "",
-            "Şampuan - 25830",
-            "",
-            "Ekmek - 49702",
-            "",
-            "Yumurta - 13276",
-            "",
-            "Süt - 78456",
-            "",
-            "Peynir - 96083",
-            "",
-            "Çay - 20457",
-            "",
-            "Bisküvi - 36412",
-            "",
-            "Kek - 29104",
-            "",
-            "Sosis - 84312",
-            "",
-            "Meyve - 68291",
-            "",
-            "Sebze - 47530",
-            "",
-            "Domates - 81652",
-            "",
-            "Patates - 10739",
-            "",
-            "Elma - 32509",
-            "",
-            "Portakal - 50283",
-            "",
-            "Limon - 41875",
-            "",
-            "Zeytin - 62547",
-            "",
-            "Bal - 79016",
-            "",
-            "Fındık - 24380",
-            "",
-            "Kavun - 95623",
-            "",
-            "Karpuz - 58342",
-            "",
-            "Makarna - 67291",
-            "",
-            "Pirinc - 13257",
-            "",
-            "Tuz - 30658",
-            "",
-            "Şeker - 84912",
-            "",
-            "Kahve - 46125",
-            "",
-            "Fasulye - 32704",
-            "",
-            "Biber - 29165",
-            "",
-            "Sarımsak - 80416"});
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Location = new System.Drawing.Point(33, 69);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(209, 24);
             this.comboBox1.TabIndex = 29;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox2
             // 
@@ -235,6 +173,7 @@
             this.Controls.Add(this.label1);
             this.Name = "personel_reyon";
             this.Text = "personel_reyon";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.personel_reyon_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

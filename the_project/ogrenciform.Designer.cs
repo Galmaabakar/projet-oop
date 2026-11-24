@@ -135,16 +135,19 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(161, 216);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(187, 24);
             this.comboBox1.TabIndex = 20;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(161, 261);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(160, 22);
             this.textBox5.TabIndex = 22;
             // 
@@ -173,6 +176,7 @@
             // 
             this.textBox6.Location = new System.Drawing.Point(156, 172);
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(160, 22);
             this.textBox6.TabIndex = 29;
             // 
@@ -190,6 +194,7 @@
             // 
             this.textBox7.Location = new System.Drawing.Point(169, 124);
             this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(160, 22);
             this.textBox7.TabIndex = 27;
             // 
@@ -207,6 +212,7 @@
             // 
             this.textBox8.Location = new System.Drawing.Point(165, 82);
             this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(160, 22);
             this.textBox8.TabIndex = 25;
             // 

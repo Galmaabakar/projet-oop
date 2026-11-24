@@ -1,84 +1,180 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="the_project.gecis">
-    <Position X="8" Y="1" Width="1.5" />
+  <Interface Name="the_project.giris">
+    <Position X="0.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABAAAAAAAIAAAAAAAAAAAAAAEAACAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>giris.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Class Name="the_project.gecis">
+    <Position X="3" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>gecis.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="the_project.listt">
-    <Position X="10.5" Y="1" Width="1.5" />
+  <Class Name="the_project.KullaniciDeposu">
+    <Position X="6" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAACAAABAAAAAAAAAEAAAAAQAACAAAIAAAAAAA=</HashCode>
-      <FileName>listt.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KullaniciDeposu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="the_project.Veriler">
+    <Position X="9" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Veriler.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="the_project.ogrenci">
-    <Position X="8" Y="2.25" Width="1.5" />
+    <Position X="0.5" Y="4" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAEAAAAAAAAAAAICAAAAAAEAAACAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ogrenci.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="the_project.personel_kutuphaneclass">
-    <Position X="11.75" Y="2.25" Width="1.5" />
+    <Position X="2.75" Y="4" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAEAAAAAAAAAAAICAAAAAAEAAACAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>personel_kutuphaneclass.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="the_project.reyonclass">
-    <Position X="9.5" Y="3" Width="1.5" />
+    <Position X="5" Y="4" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAEAAAAAAAAAAAICAAAAAAEAAACAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>reyonclass.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="the_project.personel_aletclass">
+    <Position X="7.25" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>personel_aletclass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="the_project.Ders">
+    <Position X="0.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="the_project.DersKaydi">
+    <Position X="2.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DersKaydi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="the_project.Kitap">
+    <Position X="4.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Kitap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="the_project.KitapAlimi">
+    <Position X="6.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KitapAlimi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="the_project.GirisKaydi">
+    <Position X="8.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GirisKaydi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="the_project.Urun">
+    <Position X="0.5" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Urun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="the_project.Sepet">
+    <Position X="2.5" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sepet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="the_project.SatisKalemi">
+    <Position X="4.5" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SatisKalemi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="the_project.Satis">
+    <Position X="6.5" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Satis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="the_project.Alet">
+    <Position X="8.5" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Alet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="the_project.AletOdunc">
+    <Position X="10.5" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AletOdunc.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Class Name="the_project.Form1">
-    <Position X="13.75" Y="2" Width="1.5" />
+    <Position X="0.5" Y="13.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>ACAEAAAAACAAABAQAAGAAABiIAAYAAAQEGAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Form1.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="the_project.ogrenciform">
-    <Position X="13.25" Y="3" Width="1.5" />
+    <Position X="2.5" Y="13.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>cAAAAAAAASAAABCQAACAAABCIAA4AAAAEHAAAAAAAIA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ogrenciform.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="the_project.personel_kutuphane">
-    <Position X="11.25" Y="3.25" Width="1.5" />
+    <Position X="4.5" Y="13.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>ACAAAAAAACAAABAQAACAAAACAAAYAAgAEGAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>personel_kutuphane.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="the_project.personel_reyon">
-    <Position X="12" Y="4.25" Width="1.5" />
+    <Position X="6.5" Y="13.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>ACAAAAAAACAAABAQAACAAABCAAAYAAAAEGAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>personel_reyon.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="the_project.yonetici">
-    <Position X="9.75" Y="4.25" Width="1.5" />
+  <Class Name="the_project.personel_alet">
+    <Position X="8.5" Y="13.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAgUAACAgEBAAAACBAAACAMA4AAIAAHAMAAAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>personel_alet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="the_project.yonetici">
+    <Position X="10.5" Y="13.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>yonetici.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="the_project.giris">
-    <Position X="12.5" Y="1" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAACAAA=</HashCode>
-      <FileName>giris.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

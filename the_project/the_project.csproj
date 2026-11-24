@@ -50,6 +50,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alet.cs" />
+    <Compile Include="AletOdunc.cs" />
+    <Compile Include="Ders.cs" />
+    <Compile Include="DersKaydi.cs" />
+    <Compile Include="GirisKaydi.cs" />
+    <Compile Include="Kitap.cs" />
+    <Compile Include="KitapAlimi.cs" />
+    <Compile Include="KullaniciDeposu.cs" />
+    <Compile Include="personel_aletclass.cs" />
+    <Compile Include="Satis.cs" />
+    <Compile Include="SatisKalemi.cs" />
+    <Compile Include="Sepet.cs" />
+    <Compile Include="Urun.cs" />
+    <Compile Include="Veriler.cs" />
+    <Compile Include="personel_alet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="personel_alet.Designer.cs">
+      <DependentUpon>personel_alet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,7 +78,6 @@
     </Compile>
     <Compile Include="gecis.cs" />
     <Compile Include="giris.cs" />
-    <Compile Include="listt.cs" />
     <Compile Include="ogrenci.cs" />
     <Compile Include="ogrenciform.cs">
       <SubType>Form</SubType>
@@ -93,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ogrenciform.resx">
       <DependentUpon>ogrenciform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="personel_alet.resx">
+      <DependentUpon>personel_alet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="personel_kutuphane.resx">
       <DependentUpon>personel_kutuphane.cs</DependentUpon>

@@ -1,44 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Forms;
 
 namespace the_project
 {
-    public class reyonclass : gecis, giris
+    public class reyonclass : gecis
     {
-        public string ad { get; set; }
-        public string soyad { get; set; }
-        private string _girisoldu;
-        public override string girisoldu
-        {
-            get
-            { return _girisoldu; }
-            set
-            {
-                _girisoldu = value;
+        public const string TIP = "personel_reyon";
 
-            }
+        public reyonclass(string no, string ad, string soyad) : base(no, ad, soyad)
+        {
         }
-        public reyonclass(string no, string sifre, string kim) : base(no, sifre, kim)
+
+        public override string kim => TIP;
+
+        public override Form EkranOlustur()
         {
-            if (sifre == "123456" && kim == "personel_reyon")
-            {
-
-                girisoldu = "giris basari ile tamamlandi";
-
-            }
-            else
-            {
-                girisoldu = "hatali giris ";
-
-            }
+            return new personel_reyon(this);
         }
-        //giris yapildiginda kimin yaptigi ekrana gostermek
-        public string ToString(string no, string kim, string ad, string soyad)
+
+        // Termine la vente : enregistre le ticket et vide le panier
+        // pour le client suivant. Renvoie null si le panier est vide.
+        public Satis SatisYap(Sepet sepet)
         {
-            return $"{no} nolu, Tip: {kim}, {ad} adli,{soyad} Soyadli giris yapti";
+            if (sepet.Bos) return null;
+
+            Satis satis = new Satis(sepet.Kalemler, this);
+            foreach (SatisKalemi kalem in sepet.Kalemler)
+            {
+                Veriler.SatilanUrunler.Add(kalem);
+            }
+            Veriler.Satislar.Add(satis);
+            sepet.Temizle();
+            return satis;
         }
     }
 }

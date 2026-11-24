@@ -97,6 +97,7 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(138, 190);
             this.textBox4.Name = "textBox4";
+            this.textBox4.UseSystemPasswordChar = true;
             this.textBox4.Size = new System.Drawing.Size(160, 22);
             this.textBox4.TabIndex = 7;
             // 
@@ -123,12 +124,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "ogrenci",
-            "personel_kutuphane",
-            "personel_alet",
-            "personel_reyon"});
             this.comboBox1.Location = new System.Drawing.Point(324, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(158, 24);
@@ -173,7 +170,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Giris";
             this.ResumeLayout(false);
             this.PerformLayout();
 
