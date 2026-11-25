@@ -10,15 +10,21 @@ namespace the_project
         public DateTime Zaman { get; }
 
         public KitapAlimi(Kitap kitap, personel_kutuphaneclass personel)
+            : this(kitap, personel.no, DateTime.Now)
+        {
+        }
+
+        // utilise au chargement depuis la base
+        public KitapAlimi(Kitap kitap, string personelNo, DateTime zaman)
         {
             Kitap = kitap;
-            PersonelNo = personel.no;
-            Zaman = DateTime.Now;
+            PersonelNo = personelNo;
+            Zaman = zaman;
         }
 
         public override string ToString()
         {
-            return $"{Zaman:HH:mm} {Kitap} (personel {PersonelNo})";
+            return $"{Zaman:dd.MM HH:mm} {Kitap} (personel {PersonelNo})";
         }
     }
 }

@@ -11,16 +11,22 @@ namespace the_project
         public DateTime Zaman { get; }
 
         public GirisKaydi(gecis kullanici)
+            : this(kullanici.no, kullanici.ad + " " + kullanici.soyad, kullanici.kim, DateTime.Now)
         {
-            No = kullanici.no;
-            AdSoyad = kullanici.ad + " " + kullanici.soyad;
-            Tip = kullanici.kim;
-            Zaman = DateTime.Now;
+        }
+
+        // utilise au chargement depuis la base
+        public GirisKaydi(string no, string adSoyad, string tip, DateTime zaman)
+        {
+            No = no;
+            AdSoyad = adSoyad;
+            Tip = tip;
+            Zaman = zaman;
         }
 
         public override string ToString()
         {
-            return $"{Zaman:HH:mm} {No} {AdSoyad} ({Tip})";
+            return $"{Zaman:dd.MM HH:mm} {No} {AdSoyad} ({Tip})";
         }
     }
 }

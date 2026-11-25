@@ -51,7 +51,7 @@ namespace the_project
                 return false;
             }
 
-            Veriler.DersKayitlari.Add(new DersKaydi(this, ders));
+            Veriler.DersKaydiEkle(new DersKaydi(this, ders));
             mesaj = $"dersiniz basari ile alindi (toplam {yeniToplam}/{KREDI_LIMITI} kredi)";
             return true;
         }

@@ -16,6 +16,20 @@ namespace the_project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Cree la base SQLite au premier lancement, puis charge les donnees.
+            try
+            {
+                Veritabani.Hazirla();
+                Veriler.Yukle();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Veritabani acilamadi:" + Environment.NewLine + hata.Message,
+                    "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             Application.Run(new Form1());
         }
     }

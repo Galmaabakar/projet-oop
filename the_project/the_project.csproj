@@ -62,7 +62,9 @@
     <Compile Include="Satis.cs" />
     <Compile Include="SatisKalemi.cs" />
     <Compile Include="Sepet.cs" />
+    <Compile Include="SifreGuvenligi.cs" />
     <Compile Include="Urun.cs" />
+    <Compile Include="Veritabani.cs" />
     <Compile Include="Veriler.cs" />
     <Compile Include="personel_alet.cs">
       <SubType>Form</SubType>
@@ -155,6 +157,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nasildostedinilir.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite">
+      <Version>10.0.13</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -24,11 +24,7 @@ namespace the_project
             if (sepet.Bos) return null;
 
             Satis satis = new Satis(sepet.Kalemler, this);
-            foreach (SatisKalemi kalem in sepet.Kalemler)
-            {
-                Veriler.SatilanUrunler.Add(kalem);
-            }
-            Veriler.Satislar.Add(satis);
+            Veriler.SatisEkle(satis);
             sepet.Temizle();
             return satis;
         }

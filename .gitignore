@@ -4,3 +4,6 @@ obj/
 .vs/
 *.user
 *.suo
+
+# Base de donnees SQLite (creee au premier lancement)
+*.db

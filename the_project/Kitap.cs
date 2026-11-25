@@ -4,6 +4,8 @@ namespace the_project
 {
     public class Kitap
     {
+        // cle dans la base de donnees (0 = pas encore enregistre)
+        public long Id { get; internal set; }
         public string Ad { get; }
         public string Yazar { get; }
         public bool BestSeller { get; }

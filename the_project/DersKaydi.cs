@@ -8,9 +8,15 @@
         public Ders Ders { get; }
 
         public DersKaydi(ogrenci ogrenci, Ders ders)
+            : this(ogrenci.no, ogrenci.ad + " " + ogrenci.soyad, ders)
         {
-            OgrenciNo = ogrenci.no;
-            OgrenciAdSoyad = ogrenci.ad + " " + ogrenci.soyad;
+        }
+
+        // utilise au chargement depuis la base
+        public DersKaydi(string ogrenciNo, string ogrenciAdSoyad, Ders ders)
+        {
+            OgrenciNo = ogrenciNo;
+            OgrenciAdSoyad = ogrenciAdSoyad;
             Ders = ders;
         }
 

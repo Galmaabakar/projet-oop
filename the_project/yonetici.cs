@@ -13,6 +13,46 @@ namespace the_project
             {
                 kutu.HorizontalScrollbar = true;
             }
+            hesapTipComboBox.Items.AddRange(gecis.Tipler);
+            HesaplariGoster();
+        }
+
+        // ---- Gestion des comptes (les mots de passe ne sont jamais affiches)
+
+        private void HesaplariGoster()
+        {
+            hesaplarListBox.DataSource = KullaniciDeposu.Hesaplar();
+            hesaplarListBox.SelectedIndex = -1;
+        }
+
+        // Cliquer sur un compte remplit son numero et son type.
+        private void hesaplarListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string satir = hesaplarListBox.SelectedItem as string;
+            if (satir == null) return;
+            string[] parcalar = satir.Split(new[] { " - " }, StringSplitOptions.None);
+            hesapNoTextBox.Text = parcalar[0];
+            hesapTipComboBox.SelectedItem = parcalar[1];
+        }
+
+        private void hesapEkleButton_Click(object sender, EventArgs e)
+        {
+            string mesaj;
+            if (KullaniciDeposu.HesapEkle(hesapNoTextBox.Text, hesapTipComboBox.SelectedItem as string,
+                                          hesapSifreTextBox.Text, out mesaj))
+            {
+                HesaplariGoster();
+            }
+            hesapSifreTextBox.Clear();
+            MessageBox.Show(mesaj);
+        }
+
+        private void sifreDegistirButton_Click(object sender, EventArgs e)
+        {
+            string mesaj;
+            KullaniciDeposu.SifreDegistir(hesapNoTextBox.Text, hesapSifreTextBox.Text, out mesaj);
+            hesapSifreTextBox.Clear();
+            MessageBox.Show(mesaj);
         }
 
         // Les listes sont des BindingList : une fois liee, la ListBox

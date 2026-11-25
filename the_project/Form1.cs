@@ -47,7 +47,7 @@ namespace the_project
                 return;
             }
 
-            Veriler.Girisler.Add(new GirisKaydi(kullanici));
+            Veriler.GirisKaydet(new GirisKaydi(kullanici));
             MessageBox.Show(kullanici + " giris yapti");
             using (Form ekran = kullanici.EkranOlustur())
             {

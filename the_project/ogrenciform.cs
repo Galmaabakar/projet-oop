@@ -59,7 +59,7 @@ namespace the_project
             }
 
             Ders ders = new Ders(ad, no, kredi);
-            Veriler.Dersler.Add(ders);
+            Veriler.DersEkle(ders);
             comboBox1.SelectedItem = ders;
             textBox1.Clear();
             textBox3.Clear();

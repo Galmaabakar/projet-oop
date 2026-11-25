@@ -38,8 +38,7 @@ namespace the_project
                 return false;
             }
 
-            alet.OduncAlan = alanKisi;
-            Veriler.AletOdunclari.Add(new AletOdunc(alet, alanKisi, this));
+            Veriler.AletOduncKaydet(new AletOdunc(alet, alanKisi, this));
             mesaj = $"{alet.Ad}, {alanKisi} kisisine odunc verildi";
             return true;
         }
@@ -58,11 +57,8 @@ namespace the_project
             }
 
             AletOdunc odunc = Veriler.AletOdunclari.Last(o => o.Alet == alet && !o.IadeEdildi);
-            odunc.IadeEt();
-            // la ligne a change : on previent les listes affichees
-            Veriler.AletOdunclari.ResetItem(Veriler.AletOdunclari.IndexOf(odunc));
             mesaj = $"{alet.Ad}, {alet.OduncAlan} kisisinden geri alindi";
-            alet.OduncAlan = null;
+            Veriler.AletIadeKaydet(odunc);
             return true;
         }
     }

@@ -34,14 +34,14 @@ namespace the_project
                 mesaj = "bu kitap zaten kayitli";
                 return null;
             }
-            Veriler.Kitaplar.Add(kitap);
+            Veriler.KitapEkle(kitap);
             mesaj = "kitabiniz basari ile kaydedildi";
             return kitap;
         }
 
         public void KitapVer(Kitap kitap)
         {
-            Veriler.KitapAlimlari.Add(new KitapAlimi(kitap, this));
+            Veriler.KitapAlimiEkle(new KitapAlimi(kitap, this));
         }
     }
 }

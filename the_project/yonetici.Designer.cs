@@ -43,6 +43,17 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.listBox6 = new System.Windows.Forms.ListBox();
+            this.hesapGroupBox = new System.Windows.Forms.GroupBox();
+            this.hesapNoLabel = new System.Windows.Forms.Label();
+            this.hesapNoTextBox = new System.Windows.Forms.TextBox();
+            this.hesapTipLabel = new System.Windows.Forms.Label();
+            this.hesapTipComboBox = new System.Windows.Forms.ComboBox();
+            this.hesapSifreLabel = new System.Windows.Forms.Label();
+            this.hesapSifreTextBox = new System.Windows.Forms.TextBox();
+            this.hesapEkleButton = new System.Windows.Forms.Button();
+            this.sifreDegistirButton = new System.Windows.Forms.Button();
+            this.hesaplarListBox = new System.Windows.Forms.ListBox();
+            this.hesapGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -182,11 +193,113 @@
             this.listBox6.Size = new System.Drawing.Size(240, 84);
             this.listBox6.TabIndex = 15;
             // 
+            // hesapGroupBox
+            // 
+            this.hesapGroupBox.Controls.Add(this.hesaplarListBox);
+            this.hesapGroupBox.Controls.Add(this.sifreDegistirButton);
+            this.hesapGroupBox.Controls.Add(this.hesapEkleButton);
+            this.hesapGroupBox.Controls.Add(this.hesapSifreTextBox);
+            this.hesapGroupBox.Controls.Add(this.hesapSifreLabel);
+            this.hesapGroupBox.Controls.Add(this.hesapTipComboBox);
+            this.hesapGroupBox.Controls.Add(this.hesapTipLabel);
+            this.hesapGroupBox.Controls.Add(this.hesapNoTextBox);
+            this.hesapGroupBox.Controls.Add(this.hesapNoLabel);
+            this.hesapGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hesapGroupBox.Location = new System.Drawing.Point(775, 12);
+            this.hesapGroupBox.Name = "hesapGroupBox";
+            this.hesapGroupBox.Size = new System.Drawing.Size(280, 425);
+            this.hesapGroupBox.TabIndex = 16;
+            this.hesapGroupBox.TabStop = false;
+            this.hesapGroupBox.Text = "Hesap yonetimi";
+            // 
+            // hesapNoLabel
+            // 
+            this.hesapNoLabel.AutoSize = true;
+            this.hesapNoLabel.Location = new System.Drawing.Point(12, 35);
+            this.hesapNoLabel.Name = "hesapNoLabel";
+            this.hesapNoLabel.Size = new System.Drawing.Size(30, 20);
+            this.hesapNoLabel.TabIndex = 0;
+            this.hesapNoLabel.Text = "No";
+            // 
+            // hesapNoTextBox
+            // 
+            this.hesapNoTextBox.Location = new System.Drawing.Point(90, 32);
+            this.hesapNoTextBox.Name = "hesapNoTextBox";
+            this.hesapNoTextBox.Size = new System.Drawing.Size(175, 27);
+            this.hesapNoTextBox.TabIndex = 1;
+            // 
+            // hesapTipLabel
+            // 
+            this.hesapTipLabel.AutoSize = true;
+            this.hesapTipLabel.Location = new System.Drawing.Point(12, 72);
+            this.hesapTipLabel.Name = "hesapTipLabel";
+            this.hesapTipLabel.Size = new System.Drawing.Size(36, 20);
+            this.hesapTipLabel.TabIndex = 2;
+            this.hesapTipLabel.Text = "Tip";
+            // 
+            // hesapTipComboBox
+            // 
+            this.hesapTipComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.hesapTipComboBox.FormattingEnabled = true;
+            this.hesapTipComboBox.Location = new System.Drawing.Point(90, 69);
+            this.hesapTipComboBox.Name = "hesapTipComboBox";
+            this.hesapTipComboBox.Size = new System.Drawing.Size(175, 28);
+            this.hesapTipComboBox.TabIndex = 3;
+            // 
+            // hesapSifreLabel
+            // 
+            this.hesapSifreLabel.AutoSize = true;
+            this.hesapSifreLabel.Location = new System.Drawing.Point(12, 110);
+            this.hesapSifreLabel.Name = "hesapSifreLabel";
+            this.hesapSifreLabel.Size = new System.Drawing.Size(48, 20);
+            this.hesapSifreLabel.TabIndex = 4;
+            this.hesapSifreLabel.Text = "Sifre";
+            // 
+            // hesapSifreTextBox
+            // 
+            this.hesapSifreTextBox.Location = new System.Drawing.Point(90, 107);
+            this.hesapSifreTextBox.Name = "hesapSifreTextBox";
+            this.hesapSifreTextBox.Size = new System.Drawing.Size(175, 27);
+            this.hesapSifreTextBox.TabIndex = 5;
+            this.hesapSifreTextBox.UseSystemPasswordChar = true;
+            // 
+            // hesapEkleButton
+            // 
+            this.hesapEkleButton.Location = new System.Drawing.Point(12, 148);
+            this.hesapEkleButton.Name = "hesapEkleButton";
+            this.hesapEkleButton.Size = new System.Drawing.Size(253, 40);
+            this.hesapEkleButton.TabIndex = 6;
+            this.hesapEkleButton.Text = "Hesap ekle";
+            this.hesapEkleButton.UseVisualStyleBackColor = true;
+            this.hesapEkleButton.Click += new System.EventHandler(this.hesapEkleButton_Click);
+            // 
+            // sifreDegistirButton
+            // 
+            this.sifreDegistirButton.Location = new System.Drawing.Point(12, 196);
+            this.sifreDegistirButton.Name = "sifreDegistirButton";
+            this.sifreDegistirButton.Size = new System.Drawing.Size(253, 40);
+            this.sifreDegistirButton.TabIndex = 7;
+            this.sifreDegistirButton.Text = "Sifre degistir";
+            this.sifreDegistirButton.UseVisualStyleBackColor = true;
+            this.sifreDegistirButton.Click += new System.EventHandler(this.sifreDegistirButton_Click);
+            // 
+            // hesaplarListBox
+            // 
+            this.hesaplarListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hesaplarListBox.FormattingEnabled = true;
+            this.hesaplarListBox.ItemHeight = 16;
+            this.hesaplarListBox.Location = new System.Drawing.Point(12, 248);
+            this.hesaplarListBox.Name = "hesaplarListBox";
+            this.hesaplarListBox.Size = new System.Drawing.Size(253, 164);
+            this.hesaplarListBox.TabIndex = 8;
+            this.hesaplarListBox.SelectedIndexChanged += new System.EventHandler(this.hesaplarListBox_SelectedIndexChanged);
+            // 
             // yonetici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1070, 450);
+            this.Controls.Add(this.hesapGroupBox);
             this.Controls.Add(this.listBox6);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -202,6 +315,8 @@
             this.Controls.Add(this.button1);
             this.Name = "yonetici";
             this.Text = "yonetici";
+            this.hesapGroupBox.ResumeLayout(false);
+            this.hesapGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,5 +338,15 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ListBox listBox6;
+        private System.Windows.Forms.GroupBox hesapGroupBox;
+        private System.Windows.Forms.Label hesapNoLabel;
+        private System.Windows.Forms.TextBox hesapNoTextBox;
+        private System.Windows.Forms.Label hesapTipLabel;
+        private System.Windows.Forms.ComboBox hesapTipComboBox;
+        private System.Windows.Forms.Label hesapSifreLabel;
+        private System.Windows.Forms.TextBox hesapSifreTextBox;
+        private System.Windows.Forms.Button hesapEkleButton;
+        private System.Windows.Forms.Button sifreDegistirButton;
+        private System.Windows.Forms.ListBox hesaplarListBox;
     }
 }

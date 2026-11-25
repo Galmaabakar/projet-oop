@@ -29,6 +29,20 @@
       <FileName>Veriler.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="the_project.Veritabani">
+    <Position X="11.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Veritabani.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="the_project.SifreGuvenligi">
+    <Position X="14" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SifreGuvenligi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="the_project.ogrenci">
     <Position X="0.5" Y="4" Width="1.75" />
     <TypeIdentifier>
